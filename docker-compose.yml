@@ -1,0 +1,24 @@
+name: my_project
+
+services:
+    app:
+        build:
+            context: .
+            target: production
+            dockerfile: Dockerfile
+
+        # uncomment if using .env for config/secrets
+        # env_file: .env
+        platform: linux/amd64
+        container_name: "${COMPOSE_PROJECT_NAME}"
+        hostname: app
+        volumes:
+            - my_project-data:/data
+        networks:
+            - my_project-net
+
+volumes:
+    my_project-data:
+
+networks:
+    my_project-net:

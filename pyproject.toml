@@ -1,0 +1,72 @@
+[project]
+name = "Template-python-project"
+version = "0.1.0"
+description = "This repository contains configurations to set up a Python development environment using VSCode's Dev Container feature. The environment includes uv and Ruff."
+
+authors = [{name = "Niklas", email = "<email>.com"}]
+maintainers = [{name = "Niklas", email = "<email>.com"}]
+
+requires-python = ">=3.12"
+readme = "README.md"
+license = {file = "LICENSE"}
+
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.3.0",
+    "pytest-cov>=7.0.0",
+    "pytest>=8.4.2",
+    "ruff>=0.14.5",
+    "ty>=0.0.1a33",
+]
+
+[tool.ruff]
+extend-exclude = ["__*"]
+line-length = 88
+
+
+[tool.ruff.format]
+# Enable reformatting of code snippets in docstrings.
+docstring-code-format = true
+docstring-code-line-length = 88
+line-ending = "auto"
+
+
+[tool.ruff.lint]
+exclude = ['tests/']
+ignore = ["ANN002", "ANN003", "ANN401", "B904", "E402", "E501", "SIM118"]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # isort
+    "I",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-annotations
+    "ANN",
+    # flake8-simplify
+    "SIM",
+    # flake8-implicit-str-concat
+    "ISC",
+]
+
+
+[tool.ty.src]
+exclude = ["__*"]
+[tool.ty.rules]
+unresolved-attribute = "ignore"
+
+
+[tool.pytest.ini_options]
+addopts = "--cov-report=term --cov-report=xml --cov=libs --cov=processes"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+# To include folders for coverage report, please add them to the pytest.ini_optitions.addopts above. This is to avoid warning messages.
+# include = ["libs", "processes"]
+omit = ["__init__.py", "libs/utilities/databricks.py", "libs/utilities/logger.py"]
