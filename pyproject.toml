@@ -3,8 +3,8 @@ name = "Template-python-project"
 version = "0.1.0"
 description = "This repository contains configurations to set up a Python development environment using VSCode's Dev Container feature. The environment includes uv and Ruff."
 
-authors = [{name = "Niklas", email = "<email>.com"}]
-maintainers = [{name = "Niklas", email = "<email>.com"}]
+authors = [{name = "Niklas", email = "<email>@.com"}]
+maintainers = [{name = "Niklas", email = "<email>@.com"}]
 
 requires-python = ">=3.12"
 readme = "README.md"
