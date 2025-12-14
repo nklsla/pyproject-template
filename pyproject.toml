@@ -17,47 +17,48 @@ dev = [
     "pre-commit>=4.3.0",
     "pytest-cov>=7.0.0",
     "pytest>=8.4.2",
-    "ruff>=0.14.5",
-    "ty>=0.0.1a33",
+    "ruff>=0.14.9",
+    "ty>=0.0.1a34",
 ]
 
 [tool.ruff]
 extend-exclude = ["__*"]
-line-length = 88
-
+line-length = 100
+indent-width = 4
 
 [tool.ruff.format]
 # Enable reformatting of code snippets in docstrings.
 docstring-code-format = true
-docstring-code-line-length = 88
-line-ending = "auto"
-
+docstring-code-line-length = 100
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
 
 [tool.ruff.lint]
-exclude = ['tests/']
-ignore = ["ANN002", "ANN003", "ANN401", "B904", "E402", "E501", "SIM118"]
+exclude = ["tests/"]
+ignore = [
+    "ANN002", # missing-type-args
+    "ANN003", # missing-type-kwargs
+    "ANN401", # any-type
+    "E402",   # module-import-not-at-top-of-file
+    "E501",   # line-too-long
+    "SIM118", # in-dict-keys
+]
 select = [
-    # pycodestyle
-    "E",
-    # Pyflakes
-    "F",
-    # isort
-    "I",
-    # pyupgrade
-    "UP",
-    # flake8-bugbear
-    "B",
-    # flake8-annotations
-    "ANN",
-    # flake8-simplify
-    "SIM",
-    # flake8-implicit-str-concat
-    "ISC",
+    "ANN", # flake8-annotations
+    "B",   # flake8-bugbear
+    "E",   # pycodestyle
+    "F",   # Pyflakes
+    "I",   # isort
+    "ISC", # flake8-implicit-str-concat
+    "SIM", # flake8-simplify
+    "UP",  # pyupgrade
 ]
 
 
 [tool.ty.src]
 exclude = ["__*"]
+
 [tool.ty.rules]
 unresolved-attribute = "ignore"
 
