@@ -22,7 +22,6 @@ dev = [
 ]
 
 [tool.ruff]
-extend-exclude = ["__*"]
 line-length = 100
 indent-width = 4
 
@@ -35,7 +34,7 @@ indent-style = "space"
 skip-magic-trailing-comma = false
 
 [tool.ruff.lint]
-exclude = ["tests/"]
+exclude = ["__*"]
 ignore = [
     "ANN002", # missing-type-args
     "ANN003", # missing-type-kwargs
