@@ -63,10 +63,17 @@ unresolved-attribute = "ignore"
 
 
 [tool.pytest.ini_options]
-addopts = "--cov-report=term --cov-report=xml --cov=libs --cov=processes"
+addopts = """
+--cov-report=term
+--cov-report=html
+--cov=<folderpath1>
+--cov=<folderpath2>
+"""
 testpaths = ["tests"]
+pythonpath = ["libs", "src/module"]
 
 [tool.coverage.run]
-# To include folders for coverage report, please add them to the pytest.ini_optitions.addopts above. This is to avoid warning messages.
-# include = ["libs", "processes"]
-omit = ["__init__.py", "libs/utilities/databricks.py", "libs/utilities/logger.py"]
+# To include folders for coverage report, please add them to the
+# pytest.ini_optitions.addopts above with --cov=folderpath
+# This is to avoid warning messages.
+omit = ["__init__.py"]

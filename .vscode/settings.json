@@ -7,19 +7,12 @@
     },
     "notebook.formatOnSave.enabled": true,
     "notebook.defaultFormatter": "charliermarsh.ruff",
-    "python.defaultInterpreterPath": "/home/vscode/.venv/bin/python",
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "python.testing.pytestEnabled": true,
     "python.testing.pytestArgs": [
         "tests"
     ],
     "python.testing.unittestEnabled": false,
-    "terminal.integrated.defaultProfile.linux": "zsh",
-    "terminal.integrated.profiles.linux": {
-        "zsh": {
-            "path": "/bin/zsh"
-        }
-    },
     "[dockercompose]": {
         "editor.autoIndent": "advanced",
         "editor.defaultFormatter": "redhat.vscode-yaml",
@@ -87,5 +80,5 @@
     "evenBetterToml.formatter.arrayAutoExpand": true,
     "evenBetterToml.formatter.compactInlineTables": true,
     "evenBetterToml.formatter.indentEntries": false,
-    "github.showAvatar": false,
+    "github.showAvatar": false
 }

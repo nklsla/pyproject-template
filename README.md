@@ -9,13 +9,16 @@ First install the [uv package/project manager](https://docs.astral.sh/uv/getting
 ```sh
 # Install also include develop dependencies
 uv sync
+uv run pre-commit install
+```
 
+#### Info
+```sh
 # If you do not want dev dependencies to be installed
 uv sync --no-dev
 
 # Use the add command to add dependencies to your project
-uv add {libraries}
+uv add <package-name>
+uv remove <package-name>
 
-# Install the pre-commit module
-uv run pre-commit install
 ```
