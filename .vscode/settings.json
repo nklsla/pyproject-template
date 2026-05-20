@@ -69,6 +69,10 @@
         "editor.tabSize": 2
     },
     "editor.defaultFormatter": "charliermarsh.ruff",
+    "ruff.path": [
+        "${workspaceFolder}/.venv/Scripts/ruff.exe"
+    ],
+    "ruff.format.preview": false,
     "ty.diagnosticMode": "workspace",
     "evenBetterToml.formatter.columnWidth": 100,
     "evenBetterToml.formatter.allowedBlankLines": 2,
